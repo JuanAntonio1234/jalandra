@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejericio 1</title>
+
+        <script>
+            let string = '  La lluvía en Canarias es una auténtica maravilla';
+
+            document.write("La longitud del string es: " + string.length + "</br>")
+            document.write("La posición de Canarias es: " + string.indexOf("Canarias") + "<br>")
+            document.write("La posición de Fuerteventura es: " + string.indexOf("Fuerteventura") + "<br>")
+            document.write(string.replace("maravilla", "pesadilla") + "<br>")
+            document.write(string.substr(15,8) + "<br>")
+            document.write(string.toUpperCase() + "</br>")
+            document.write(string.trimLeft() + "</br>")
+
+            lista = string.split(" ")
+            for (palabra in lista){
+                document.write(lista[palabra])
+            }
+
+
+        </script>
+
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
