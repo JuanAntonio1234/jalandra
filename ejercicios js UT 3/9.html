@@ -5,7 +5,62 @@
         <title>Ejericio 9</title>
 
         <script>
+
+
+            fecha = "1/" + pedirFecha() //pedirfecha solo pide el mes y el año
+
+            fechaFormateada = new Date(convertirFecha(fecha));
+
+
+            alert(fechaFormateada)
+
+
             
+
+            function pedirFecha(){
+                
+                //he reutilizado todo el código del ejercicio 5
+
+                const rex = /[0-9]{2}[-/.]{1}[0-9]{4}$/
+                fechaValida=false
+
+
+                while(!fechaValida){
+                    fecha = prompt("Escriba un mes y un año. Formato (mm/aaaa)")
+                
+
+                    if(rex.test(fecha)){
+
+                        array = fecha.split(/[./-]/) // hago un split cuando encuentre un . una barra o un guión.
+
+                            if(array[0] > 12){
+                                // el mes no puede ser mayor a 12
+                                alert("Debe escribir una fecha válida.")
+                            }
+                            else{
+                                fechaValida=true //detenemos el bucle, ya tenemos un input válido.
+                                fecha = array[0] + "/" + array[1];
+                            
+                            }
+
+                    }
+
+                    else{
+                        alert("Debe escribir una fecha válida.")
+                    }
+                }
+
+                return fecha;
+            }
+
+            function convertirFecha(fecha){
+                arrayDatos = fecha.split("/")
+                fechaFormateada = arrayDatos[1] + "/" + arrayDatos[0] + "/" + arrayDatos[2];
+
+
+                return fechaFormateada
+            }
+        
         </script>
 
     </head>
