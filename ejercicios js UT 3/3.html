@@ -5,7 +5,11 @@
         <title>Ejericio 3</title>
 
         <script>
-            
+            let productos = prompt("Escriba una lista de productos separados por comas.")
+            lista = productos.split(",")
+            for(producto in lista){
+                document.write(lista[producto] + "</br>")
+            }
         </script>
 
     </head>

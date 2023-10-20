@@ -6,6 +6,25 @@
 
         <script>
             
+            numero = prompt("Escriba un número con formato +xx-xxxxxxxxx");
+
+            lista = numero.split("-");
+
+            if(lista.length != 3){
+                alert("Escribe un número correcto.")
+            }
+            else{
+                if(!lista[0][0]=="+" || isNaN(lista[1]) || isNaN(lista[2])){
+                    alert("Escribe un número correcto.")
+                    numero = prompt("Escriba un número con formato +xx-xxxxxxxxx-xx");
+                }
+                else{
+                document.write("Número de teléfono: " + numero.substr(4, 9))
+                }
+            }
+            
+            
+
         </script>
 
     </head>

@@ -5,13 +5,47 @@
         <title>Ejericio 5</title>
 
         <script>
+
+
+
+            const rex = /^[0-9]{2}[-/.]{1}[0-9]{2}[-/.]{1}[0-9]{4}$/
+            fechaValida=false
+
+
+            while(!fechaValida){
+                fecha = prompt("Escriba una fecha.")
+            
+
+                if(rex.test(fecha)){
+
+                    array = fecha.split(/[./-]/) // hago un split cuando encuentre un . una barra o un guión.
+
+                        if(array[0] > 31 || array[1] > 12){
+                            // el día no puede ser mayor a 31, ni el mes a 12
+                            alert("Debe escribir una fecha válida.")
+                        }
+                        else{
+                            fechaValida=true //detenemos el bucle, ya tenemos un input válido.
+                            fecha = array[0] + "-" + array[1] + "-" + array[2];
+                        document.write(fecha)
+                        
+                        }
+
+                }
+
+                else{
+                    alert("Debe escribir una fecha válida.")
+                }
+            }
+
             
         </script>
-
     </head>
-
+    
     <body>
 
     </body>
 
 </html>
+
+<!--1. Debes hacer una investigación dada cualquier fecha, devolverla formateada como dd-mm-yyyy -->
