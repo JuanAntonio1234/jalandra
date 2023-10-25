@@ -5,7 +5,19 @@
         <title>Ejericio 10</title>
 
         <script>
+            //supongo que quieres que pida los nombres al usuario, si no no se pueden separar por ;
+            // ya que los elementos de los arays se separan con comas, no con puntos y coma.
             
+            nombres1 = prompt("Introduce el primer conjunto de nombres separados por ';'");
+            nombres2 = prompt("Introduce el segundo conjunto de nombres separados por ';'");
+        
+            arrayNombres1 = nombres1.split(';');
+            arrayNombres2 = nombres2.split(';');
+        
+            arrayFinal = arrayNombres1.concat(arrayNombres2);
+
+            alert.log(arrayFinal);
+
         </script>
 
     </head>

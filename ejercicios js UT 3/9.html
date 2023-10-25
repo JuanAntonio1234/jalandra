@@ -5,15 +5,25 @@
         <title>Ejericio 9</title>
 
         <script>
+            //fechaLocal, fecha, dias, meses, diaDelMes, diaCalculado; //variables que usaremos.
 
+            fechaLocal = "1/" + pedirFecha() //pedirfecha solo pide el mes y el año
 
-            fecha = "1/" + pedirFecha() //pedirfecha solo pide el mes y el año
+            fecha = new Date(convertirFecha(fechaLocal));
 
-            fechaFormateada = new Date(convertirFecha(fecha));
+            dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+            meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 
+            diaDelMes = fecha.getDate()
 
-            alert(fechaFormateada)
+            while(diaDelMes <= ultimoDiaDelMes(fecha)){
+                diaCalculado = fecha.getDay()
 
+                document.write(diaDelMes + " de " + meses[fecha.getMonth()] + " de " + fecha.getFullYear() + " ---> " + dias[diaCalculado]);
+                document.write("<br>")
+                diaDelMes++
+                fecha.setDate(fecha.getDate()+1);
+            }
 
             
 
@@ -61,6 +71,16 @@
                 return fechaFormateada
             }
         
+            function ultimoDiaDelMes(fecha) {
+                //esta función devuelve el último día del mes de la fecha introducida, para febrero 28, octubre 31, etc.
+                mes = fecha.getMonth();
+                año = fecha.getFullYear();
+                dia1proxMes = new Date(año, mes + 1, 1);
+                let ultimoDiaDelMes = new Date(dia1proxMes - 1);
+
+                return ultimoDiaDelMes.getDate();
+            }
+
         </script>
 
     </head>
